@@ -1,0 +1,32 @@
+img {
+    position: relative;
+    left: 10px;
+    z-index: 1;
+ }
+ 
+ .words {
+    font-family: impact;
+    font-size: 60px;
+    position: absolute;
+    z-index: 2;
+ }
+ 
+ .first {
+    top: 50px;
+    left: 130px;
+ }
+ 
+ .heart {
+    color: red; 
+    font-size: 80px;
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+    left: 145px;
+ }
+ 
+ .last {
+    top: 100px;
+    left: 130px;
+ }
+ 
