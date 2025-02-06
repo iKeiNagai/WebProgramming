@@ -2,6 +2,11 @@ img {
     position: relative;
     left: 10px;
     z-index: 1;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 10px 10px;
+    background-color: lightblue;
  }
  
  .words {
@@ -12,8 +17,8 @@ img {
  }
  
  .first {
-    top: 50px;
-    left: 130px;
+    top: 70px;
+    left: 170px;
  }
  
  .heart {
@@ -21,12 +26,12 @@ img {
     font-size: 80px;
     position: absolute;
     z-index: 2;
-    top: 40px;
-    left: 145px;
+    top: 60px;
+    left: 185px;
  }
  
  .last {
-    top: 100px;
-    left: 130px;
+    top: 120px;
+    left: 170px;
  }
  
