@@ -1,3 +1,127 @@
 body{
-    background-image: url('gwen.jpg');
+    background-image: url('backg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    padding: 50px;
+    margin: 100px;
+    border-radius: 15px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: lightgreen;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightgreen;
+    border-radius: 15px;
+    width: 50%;
+    padding: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blanchedalmond;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 20px;
+}
+
+.image{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.parent-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px;
+    list-style: none;
+}
+
+.quote{
+    margin-bottom: 20px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    word-spacing: 3px;
+}
+
+a{
+    color: lightseagreen;
+    text-decoration: solid;
+}
+
+a:hover{
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+table{
+    width: 50%;
+    border-collapse: collapse;
+    margin: 50px;
+}
+
+td{
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+tr:nth-child(odd){
+    background-color: lightpink;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+h2{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3{
+    text-align: center;
+}
+
+li{
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+ul{
+    padding: 5px;   
+}
+
+h1{
+    color: darkblue;
+    letter-spacing: 7px;
 }
