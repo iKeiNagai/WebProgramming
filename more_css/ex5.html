@@ -4,8 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex5</title>
+    <style>
+        table, th, td{
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+            background-color: antiquewhite;
+            padding:10px;
+        }
+
+        td:hover{
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+        header{
+            text-align: center;
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <h5>Exercise 5</h5>
+
+    <div>
+        <p>Maintaing Quality Control</p>
+
+        <ul>
+            <li>Implement a standard external stylesheet all teachers must use</li>
+            <li>Discourage inline styles to ensure uniformity and easier maintanance</li>
+            <li>Establish design rules for heading, fonts, colors, and layouts</li>
+            <li>Limit permission to edit certain tags</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Process to mantain consistent styling</p>
+        <ul>
+            <li>Define a global external css file</li>
+            <li>Use internal CSS for page-specific adjustments</li>
+            <li>Allow only content update by teachers</li>
+            <li>Use consistent template system </li>
+        </ul>
+
+        <p> The approach is better because it prevents inconsistent design across pages, reduces errors caused by CSS modifiers, and improves accessibility and readability for the page users.</p>
+    </div>
+
+    <div>
+        <p>HTML tags and CSS styles</p>
+
+        <ul>HTML TAGS
+            <li>&lt;div&gt for section containers</li>
+            <li>&lt;h1&gt - &lt;h6&gt for section headings</li>
+            <li>&lt;table&gt for schedules and timetables</li>
+            <li>&lt;li&gt or &lt;ol&gt for subjects and assignmets lists</li>
+            <li>&lt;a&gt for online resources</li>
+            <li>&lt;img&gt for school logos or diagrams</li>
+            
+        </ul>
+
+        <ul>CSS styles
+            <li>body and h1 for global styling</li>
+            <li>font-size and color for inline css</li>
+            <li>text- align for specific page adjustments</li>
+        </ul>
+    </div>
+
+    <div>
+        <header>
+            <h1>Website Development Schedule</h1>
+            <h2>Team: Thomas, Thomas, Thomas, Thomas</h2>
+        </header>
+        <table >
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+               <td>9:00 - 10:00</td>
+               <td rowspan="2">Planning & Research</td>
+               <td>Design Wireframes</td>
+               <td rowspan="2">HTML Structure</td>
+               <td>CSS Styling</td>
+               <td rowspan="2">JavaScript Functions</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:00</td>
+                <td>Color & Typography</td>
+                <td>Responsive Design</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:00</td>
+                <td colspan="2">Creating Content</td>
+                <td>Debugging</td>
+                <td colspan="2">Testing & Deployment</td>
+            </tr>
+            <tr>
+                <td>12:00 - 1:00</td>
+                <td colspan="5" class="lunch-break">Lunch Break</td>
+            </tr>
+            <tr>
+                <td>1:00 - 2:00</td>
+                <td>Page Layout</td>
+                <td rowspan="2">Forms & Inputs</td>
+                <td>Navigation</td>
+                <td rowspan="2">Performance Optimization</td>
+                <td>Final Review</td>
+            </tr>
+            <tr>
+                <td>2:00 - 3:00</td>
+                <td>Database Integration</td>
+                <td>Testing on Devices</td>
+                <td>Launch Website</td>
+            </tr>
+            <tr>
+                <td>3:00 - 4:00</td>
+                <td>Security Checks</td>
+                <td>Optimization</td>
+                <td>Bug Fixes</td>
+                <td>Content Upload</td>
+                <td>Client Feedback</td>
+            </tr>
+            <tr>
+                <td>4:00 - 5:00</td>
+                <td colspan="5" class="project-time">Team Discussion & Improvements</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
