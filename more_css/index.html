@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .nav-menu{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        body{
+            background-color: blanchedalmond;
+        }
+        
+        nav{
+            background-color: aqua;
+            font-size: 30px;
+        }
+
+        li{
+            margin: 10px;
+        }
+
+        h1{
+            font-size: 60px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <ul>
-        <li><a href="ex1.html">Exercise 1</a></li>
-        <li><a href="ex2.html">Exercise 2</a></li>
-        <li><a href="ex3.html">Exercise 3</a></li>
-        <li><a href="ex4.html">Exercise 4</a></li>
-        <li><a href="ex5.html">Exercise 5</a></li>
-    </ul>
-   
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="ex1.html">Exercise 1</a></li>
+            <li><a href="ex2.html">Exercise 2</a></li>
+            <li><a href="ex3.html">Exercise 3</a></li>
+            <li><a href="ex4.html">Exercise 4</a></li>
+            <li><a href="ex5.html">Exercise 5</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to css exercises</h1>
 </body>
 </html>
