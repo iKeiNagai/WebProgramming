@@ -71,6 +71,11 @@ body{
     word-spacing: 3px;
 }
 
+.success{
+    color: darkblue;
+    font-weight: bold
+}
+
 a{
     color: lightseagreen;
     text-decoration: solid;
