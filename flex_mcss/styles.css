@@ -1,0 +1,39 @@
+.columns{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.left-column{
+    flex-basis: 33%;
+}
+
+.right-column{
+    flex-basis: 67%;
+}
+
+.clear{
+    clear: both;
+}
+
+.bottom-text{
+    position: fixed;
+    bottom: 5px;
+}
+
+aside{
+    padding: 2em;
+    margin: 2em;
+    border-style: dashed;
+    border-color: red;
+}
+
+img{
+    float: right;
+    width: 200px;
+    height: 200px;
+}
+
+header{
+    text-align: center;
+}
