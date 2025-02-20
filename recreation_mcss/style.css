@@ -1,9 +1,48 @@
+#movie-title{
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+}
 
+#rating{
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+}
+
+#num-review{
+    font-size: 8pt;
+    color: white;
+}
 .banner{
     width: 100%;
     height: 50px;
     background-image: url(bannerbackground.png);
     background-repeat: repeat-x;
+}
+
+.main-part{
+    background-color: green;
+    width: 800px;
+    margin: 0 auto;
+    border: 4px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.first-panel{
+    background-color: blue;
+    width: 550px;
+}
+
+.rating-panel{
+    display: flex;
+    background-image: url(rottenbackground.png);
+    background-repeat: repeat-x;
+}
+
+.rating-panel img{
+    height: 83px;
 }
 
 body{
