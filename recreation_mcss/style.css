@@ -31,7 +31,6 @@
 }
 
 .first-panel{
-    background-color: blue;
     width: 550px;
 }
 
@@ -43,6 +42,36 @@
 
 .rating-panel img{
     height: 83px;
+}
+
+.columns{
+    display: flex;
+    background-color: aqua;
+}
+
+.column{
+    width: 47%;
+    margin: 2%;
+}
+
+.column div{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 8pt;
+    background-color: #E1D697;
+    border: 2px solid gray;
+    padding: 8px;
+}
+
+.column div img{
+    float: left;
+    margin-right: 5px;
+}
+
+.column span{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 body{
