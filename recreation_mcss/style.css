@@ -22,6 +22,7 @@
 }
 
 .main-part{
+    display: flex;
     background-color: green;
     width: 800px;
     margin: 0 auto;
@@ -72,6 +73,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.second-panel{
+    width: 250px;
 }
 
 body{
