@@ -22,7 +22,6 @@
 }
 
 .main-part{
-    display: flex;
     width: 800px;
     margin: 0 auto;
     border: 4px;
@@ -82,6 +81,17 @@
 
 .second-panel img{
     margin-bottom: -10px;
+}
+
+.two-panels{
+    display: flex;
+}
+
+.last-panel{
+    background-color: #A2B964;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
 }
 
 dl{
