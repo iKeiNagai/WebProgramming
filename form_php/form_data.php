@@ -35,7 +35,7 @@
     }
     ?>
 
-    <h1>Job Application Form</h1>
+    <h1>Job Application Form (using foreach loop and associative array)</h1>
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Process the form data
@@ -62,7 +62,11 @@
     
     // Display the form data using a foreach loop
     echo "<h2>Form Data:</h2>";
+    echo "<ul>";
 
+    foreach ($formFields as $form_field => $label) {
+        echo "<li>". $label . " : " . $_POST[$form_field];
+    }
     ?>
 </body>
 </html>
