@@ -6,6 +6,93 @@
     <title>Job Application Form</title>
 </head>
 <body>
+    <!--name -> php -->
+    <!--name in radio to group -->
+    
+    <h1>Job Application Form</h1>
+    <form>
+        <label for="position"> Position Applied For:</label><br>
+        <input type="text" name="position"><br>
+
+        <label for="name">Name:</label><br>
+        <input type="text" name="name"><br>
+
+        <p>Gender:</p>
+
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender"><br>
+
+        <label for="female">Female</label><br>
+        <input type="radio" name="gender"><br>
+
+        <p></p>
+
+        <label for="nationality">Nationality:</label><br>
+        <input type="text" name="nationality"><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" name="dob"><br>
+
+        <label for="address">Address</label><br>
+        <input type="text" name="address"><br>
+
+        <label for="phone-number">Telephone Number:</label><br>
+        <input type="text" name="telephone"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" name="email"><br>
+
+        <label for="education"><h2>Educational History and Qualifications:</h2></label><br>
+        <input type="text" name="education"><br>
+
+        <h2>Work Experience/Employment/Training:</h2>
+
+        <label for="yoe">Years of Experience:</label><br>
+        <input type="range" name="yoe"><br>
+
+        <label for="ps">Personal Statement:</label><br>
+        <input type="text" name="ps"><br>
+
+        <h2>Referees:</h2>
+
+        <label for="rname">Name:</label><br>
+        <input type="text" name="rname"><br>
+
+        <label for="roccupation">Occupation:</label><br>
+        <input type="text" name="roccupation"><br>
+
+        <label for="rrelationship">Relationship:</label><br>
+        <select name="relation">
+            <option value="friend">Friend</option>
+            <option value="family">Family</option>
+            <option value="colleague">Colleague</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="raddress">Address:</label><br>
+        <input type="text" name="raddress"><br>
+
+        <label for="rtelephone">Telephone:</label><br>
+        <input type="text" name="rtelephone"><br>
+
+        <p></p>
+
+        <label for="vegetarian">Vegetarian:</label><br>
+        <input type="checkbox" name="vegetarian"><br>
+
+        <label for="fruits">Select Fruits (Hold Ctrl/Command to select multiple):</label><br>
+        <select name="fruits" size="4">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="orange">Orange</option>
+            <option value="strawberry">Strawberry</option>
+        </select><br>
+
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset" name="reset" value="Clear to Reset">
+    </form>
     
 </body>
 </html>
