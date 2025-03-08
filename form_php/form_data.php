@@ -4,7 +4,7 @@
     <title>Job Application Form</title>
 </head>
 <body>
-    <h1>Job Application Form</h1>
+    <h1>Job Application Form (using print_r)</h1>
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Process the form data
@@ -33,6 +33,36 @@
         print_r($_POST);
         echo "</pre>";
     }
+    ?>
+
+    <h1>Job Application Form</h1>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Process the form data
+        $formFields = array(
+        'position' => 'Position Applied For',
+        'name' => 'Name',
+        'gender' => 'Gender',
+        'nationality' => 'Nationality',
+        'address' => 'Address',
+        'telephone' => 'Telephone Number',
+        'email' => 'Email',
+        'education' => 'Educational History and Qualifications',
+        'yoe' => 'Years of Experience',
+        'ps' => 'Personal Statement',
+        'rname' => 'Referee Name',
+        'roccupation' => 'Referee Occupation',
+        'relation' => 'Referee Relationship',
+        'raddress' => 'Referee Address',
+        'rtelephone' => 'Referee Phone',
+        'vegetarian' => 'Vegetarian',
+        'fruits' => 'Selected Fruits',
+        );
+    }
+    
+    // Display the form data using a foreach loop
+    echo "<h2>Form Data:</h2>";
+
     ?>
 </body>
 </html>
