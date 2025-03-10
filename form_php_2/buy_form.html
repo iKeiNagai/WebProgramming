@@ -21,23 +21,41 @@
 		
 		<h2>Give Us Your Money</h2>
 
-		<form>
+		<form action="test_params.php" method="post">
 		<dl>
-			<dt>Name</dt>
+			<dt><label for="name">Name</label></dt>
 			<dd>
-				???
+				<input type="text" name="name">
 			</dd>
 			
-			<dt>Section</dt>
+			<dt><label for="section">Section</label> </dt>
 			<dd>
-				???
+				<select name="section">
+					<option value="MA">MA</option>
+					<option value="MB">MB</option>
+					<option value="MC">MC</option>
+					<option value="MD">MD</option>
+					<option value="ME">ME</option>
+					<option value="MF">MF</option>
+					<option value="MG">MG</option>
+					<option value="MH">MH</option>
+				</select>
 			</dd>
 			
-			<dt>Credit Card</dt>
+			<dt><label for="cardnum">Credit Card</label></dt>
 			<dd>
-				???
+				<input type="text" name="cc">
+				<select name="typecc">
+					<option value="visa">Visa</option>
+					<option value="mc">MasterCard</option>
+					<option value="amex">American Express</option>
+					<option value="discover">Discover</option>
+				</select>
 			</dd>
 		</dl>
+
+		<input type="submit" name="submit">
+		</form>
 		
 		<div>
 			I am a giant sucker.
