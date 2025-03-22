@@ -13,7 +13,7 @@
     <nav>
         <b>Welcome</b>
         <ul>
-            <li><a href="">Sign up for a new account</a></li>
+            <li><a href="signup.php">Sign up for a new account</a></li>
             <li><a href="matches.php">Check your matches</a></li>
         </ul>
     </nav>
