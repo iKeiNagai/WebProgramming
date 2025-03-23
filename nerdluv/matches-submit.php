@@ -24,7 +24,7 @@
                     "minAge" => (int)trim($userData[5]),
                     "maxAge" => (int)trim($userData[6])
                 ];
-                print_r($currentUser);
+                
                 break;
             }
         }
@@ -34,7 +34,59 @@
         }else{
             $msg = "<br>Hello " . $currentUser["name"] . "! Here are your matches: <br><br>";
 
-            
+            foreach ($users as $user) {
+                $userData = explode(",", $user);
+                if (strcasecmp($userData[0], $name) == 0) continue; //skips user
+
+                $match = [
+                    "name" => trim($userData[0]),
+                    "gender" => trim($userData[1]),
+                    "age" => (int)trim($userData[2]),
+                    "personality" => trim($userData[3]),
+                    "os" => trim($userData[4]),
+                    "minAge" => (int)trim($userData[5]),
+                    "maxAge" => (int)trim($userData[6])
+                ];
+
+                if(
+                    $match["gender"] !== $currentUser["gender"] && //opposite gender
+                    $match["age"] >= $currentUser["minAge"] && $match["age"] <= $currentUser["maxAge"] && //age compatibility
+                    $currentUser["age"] >= $match["minAge"] && $currentUser["age"] <= $match["maxAge"] && 
+                    $match["os"] === $currentUser["os"] //matching OS
+                ){
+                    //checks personality based on type letters
+                    $commonLetters = 0;
+                    for ($i = 0; $i < 4; $i++) {
+                        if ($match["personality"][$i] === $currentUser["personality"][$i]) {
+                            $commonLetters++;
+                        }
+                    }
+
+                    if ($commonLetters > 0) {
+                        $matches[] = $match;
+                    }
+                }
+            }
+            echo "<br>";
+            echo count($matches);
+        }
+
+        if(!empty($matches)){
+            foreach($matches as $match){
+                $msg .= "
+                    <img src= 'user.jpg'><br>
+
+                    <b> {$match['name']}</b>
+
+                    <ul>
+                        <li>gender: {$match['gender']}</li>
+                        <li>age: {$match['age']}</li>
+                        <li>personality: {$match['personality']}</li>
+                        <li>OS: {$match['os']}</li>
+                    </ul><br><br>
+
+                ";
+            }
         }
     }
 ?>
