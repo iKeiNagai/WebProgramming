@@ -24,8 +24,6 @@ function domLoaded() {
         button.addEventListener("click", function ()
     { boardButtonClicked(button); });
     }
-    // Clear the board
-    newGame();
 }
 
 //Returns an array of 9 <button> elements that make up the game board.
@@ -70,6 +68,7 @@ return gameStatus.DRAW_GAME;
 }
 function newGame() {
     clearTimeout(computerMoveTimeout);
+    clearInterval(countdownInterval);
     computerMoveTimeout = 0;
 
     //Loop through all game board buttons to reset them
@@ -85,6 +84,7 @@ function newGame() {
 
     //Update turn information text
     document.getElementById("turnInfo").textContent = "Your turn";
+    document.getElementById("timer").textContent = "";
 }
 function boardButtonClicked(button) {
     //if player's true
