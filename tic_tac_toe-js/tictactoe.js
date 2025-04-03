@@ -1,5 +1,10 @@
 let playerTurn = true;
 let computerMoveTimeout = 0;
+
+let playerMoveTimeout = 0;
+let countdownInterval = 0;
+let timeLeft = 5;
+
 const gameStatus = {
     MORE_MOVES_LEFT: 1,
     HUMAN_WINS: 2,
@@ -93,12 +98,21 @@ function boardButtonClicked(button) {
         //Disable the button to prevent further clicks
         button.disabled = true;
         
+        //stop timer once player moves
+        clearTimeout(playerMoveTimeout);
+
+        //stops countdown
+        clearInterval(countdownInterval);
+
         //Switch the turn to the computer
         switchTurn();
     }
 }
 function switchTurn() {
     const status = checkForWinner();
+
+    clearInterval(countdownInterval);
+    clearTimeout(playerMoveTimeout);
 
     //If more moves are left, continue the game
     if (status === gameStatus.MORE_MOVES_LEFT) {
@@ -113,6 +127,30 @@ function switchTurn() {
             //switching from computer to player
             playerTurn = true;
             document.getElementById("turnInfo").textContent = "Your turn";
+
+            //timer starts
+            timeLeft = 5;
+            document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+
+            //updates timer every second
+            countdownInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+
+                if (timeLeft === 0) {
+                    clearInterval(countdownInterval);
+                    if (playerTurn) {
+                        makeComputerMove();
+                    }
+                }
+            }, 1000);
+
+            //starts 5 second countdown
+            playerMoveTimeout = setTimeout(() => {
+                if (playerTurn) {
+                    makeComputerMove(); // Auto-move if time runs out
+                }
+            }, 5000);
         }
     } else {
         //Game over, prevent further moves
