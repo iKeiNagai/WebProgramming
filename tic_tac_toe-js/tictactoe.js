@@ -98,8 +98,61 @@ function boardButtonClicked(button) {
     }
 }
 function switchTurn() {
-    
+    const status = checkForWinner();
+
+    //If more moves are left, continue the game
+    if (status === gameStatus.MORE_MOVES_LEFT) {
+        if (playerTurn) {
+            //switching from player to computer
+            playerTurn = false;
+            document.getElementById("turnInfo").textContent = "Computer's turn";
+            
+            //simulate computer thinking before making a move
+            computerMoveTimeout = setTimeout(makeComputerMove, 1000);
+        } else {
+            //switching from computer to player
+            playerTurn = true;
+            document.getElementById("turnInfo").textContent = "Your turn";
+        }
+    } else {
+        //Game over, prevent further moves
+        playerTurn = false;
+
+        if (status === gameStatus.HUMAN_WINS) {
+            document.getElementById("turnInfo").textContent = "You win!";
+        } else if (status === gameStatus.COMPUTER_WINS) {
+            document.getElementById("turnInfo").textContent = "Computer wins!";
+        } else if (status === gameStatus.DRAW_GAME) {
+            document.getElementById("turnInfo").textContent = "Draw game";
+        }
+    }
 }
 function makeComputerMove() {
+    const buttons = getGameBoardButtons();
+    let availableButtons = [];
 
+    //find all available (empty) buttons
+    for (let button of buttons) {
+        if (button.innerHTML === "") {
+            availableButtons.push(button);
+        }
+    }
+
+    //choose a random button from the available ones
+    if (availableButtons.length > 0) {
+        let randomIndex = Math.floor(Math.random() * availableButtons.length);
+        let chosenButton = availableButtons[randomIndex];
+
+        //Set the button's text content to "O"
+        chosenButton.textContent = "O";
+
+        //Add the "o" class
+        chosenButton.classList.add("o");
+
+        //Disable the button
+        chosenButton.disabled = true;
+    }
+
+    //switch back to the player's turn
+    switchTurn();
 }
