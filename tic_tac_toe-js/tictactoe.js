@@ -29,6 +29,7 @@ function domLoaded() {
 function getGameBoardButtons() {
     return document.querySelectorAll("#gameBoard > button");
 }
+
 function checkForWinner() {
 const buttons = getGameBoardButtons();
 // Ways to win
@@ -63,14 +64,29 @@ for (let button of buttons) {
 return gameStatus.DRAW_GAME;
 }
 function newGame() {
-// TODO: Complete the function
+    clearTimeout(computerMoveTimeout);
+    computerMoveTimeout = 0;
+
+    //Loop through all game board buttons to reset them
+    const buttons = getGameBoardButtons();
+    for (let button of buttons) {
+        button.textContent = "";
+        button.className = ""; 
+        button.disabled = false;
+    }
+
+    //Allow the player to take a turn
+    playerTurn = true;
+
+    //Update turn information text
+    document.getElementById("turnInfo").textContent = "Your turn";
 }
 function boardButtonClicked(button) {
-// TODO: Complete the function
+
 }
 function switchTurn() {
-// TODO: Complete the function
+    
 }
 function makeComputerMove() {
-// TODO: Complete the function
+
 }
