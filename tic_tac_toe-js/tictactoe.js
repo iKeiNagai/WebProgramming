@@ -82,7 +82,20 @@ function newGame() {
     document.getElementById("turnInfo").textContent = "Your turn";
 }
 function boardButtonClicked(button) {
-
+    //if player's true
+    if (playerTurn) {
+        //Set the button's text content to "X"
+        button.textContent = "X";
+        
+        //Add the "x" class to the button
+        button.classList.add("x");
+        
+        //Disable the button to prevent further clicks
+        button.disabled = true;
+        
+        //Switch the turn to the computer
+        switchTurn();
+    }
 }
 function switchTurn() {
     
