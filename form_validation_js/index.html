@@ -8,16 +8,21 @@
 </head>
 <body>
     <form>
+        <div id="idError" style="color:red"></div>
         <label for="id">ID:</label>
         <input type="text" id="id" name="id"><br>
 
+        <div id="fnError" style="color:red"></div>
         <label for="firstName">FirstName:</label>
         <input type="text" id="firstName" name="firstName"><br>
         
+        <div id="lnError" style="color:red"></div>
         <label for="lastName">lastName:</label>
         <input type="text" id="lastName" name="lastName"><br>
 
-        <input type="submit" id="submit" value="Add">
+        <input type="submit" id="add" value="Add">
     </form>
+
+    <div id="formData"></div>
 </body>
 </html>
