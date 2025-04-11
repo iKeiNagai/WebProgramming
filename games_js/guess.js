@@ -2,6 +2,8 @@ const guessInput = document.getElementById("guessInput");
 const guessButton = document.getElementById("guessButton");
 const feedback = document.getElementById("msg");
 const timerDisplay = document.getElementById("timer");
+const soundCorrect = document.getElementById("sound-correct");
+const soundWrong = document.getElementById("sound-wrong");
 
 //test variables
 const userNumber = document.getElementById("testNumber");
@@ -48,8 +50,10 @@ guessButton.addEventListener("click", function(){
     //if guess is correct
     if( guess === secretNumber){
         endGame(`Correct! The number was ${secretNumber}`);
+        soundCorrect.play();
     }else{
         feedback.textContent = guess < secretNumber ? "Too low! Try again" : "Too high! Try again";
+        soundWrong.play();
     }
 
 
