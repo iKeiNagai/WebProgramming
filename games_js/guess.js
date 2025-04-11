@@ -24,6 +24,11 @@ function startGame(){
     
     guessesLeft = maxGuesses;
     remainingGuesses.textContent = `Guesses remaining: ${guessesLeft}`;
+
+    guessButton.disabled = false;
+    guessInput.disabled = false;
+
+    feedback.textContent = "New game started...";
 }
 
 //endgame with message
@@ -32,6 +37,9 @@ function endGame(message, sound){
 
     feedback.textContent = message;
     sound.play();
+
+    guessButton.disabled = true;
+    guessButton.disabled = true;
 
     setTimeout(startGame, 2000); //new game after 2 secs
 
@@ -56,9 +64,9 @@ guessButton.addEventListener("click", function(){
 
     //if guess is correct
     if( guess === secretNumber){
-        endGame(`Correct! The number was ${secretNumber}`, soundCorrect);
+        endGame(`Correct! The number was ${secretNumber}. Starting new game...`, soundCorrect);
     }else if(guessesLeft === 0){
-        endGame(`Game Over. The number was ${secretNumber}`, soundWrong);
+        endGame(`Game Over. The number was ${secretNumber}. Starting new game...`, soundWrong);
     }else{
         feedback.textContent = guess < secretNumber ? "Too low! Try again" : "Too high! Try again";
         soundWrong.play();
