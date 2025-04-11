@@ -4,6 +4,7 @@ const feedback = document.getElementById("msg");
 const timerDisplay = document.getElementById("timer");
 const soundCorrect = document.getElementById("sound-correct");
 const soundWrong = document.getElementById("sound-wrong");
+const remainingGuesses = document.getElementById("remainingGuesses");
 
 //test variables
 const userNumber = document.getElementById("testNumber");
@@ -11,6 +12,7 @@ const randomNumber = document.getElementById("testRand");
 
 let secretNumber;
 let startTime, timerInterval;
+let guessesLeft,maxGuesses = 5;
 
 //starts game
 function startGame(){
@@ -20,13 +22,16 @@ function startGame(){
     updateTimer();
     timerInterval = setInterval(updateTimer,1000);
     
+    guessesLeft = maxGuesses;
+    remainingGuesses.textContent = `Guesses remaining: ${guessesLeft}`;
 }
 
 //endgame with message
-function endGame(message){
+function endGame(message, sound){
     clearInterval(timerInterval); //stops timer
 
     feedback.textContent = message;
+    sound.play();
 
     setTimeout(startGame, 2000); //new game after 2 secs
 
@@ -47,18 +52,22 @@ guessButton.addEventListener("click", function(){
         return;
     }
 
+    guessesLeft--;
+
     //if guess is correct
     if( guess === secretNumber){
-        endGame(`Correct! The number was ${secretNumber}`);
-        soundCorrect.play();
+        endGame(`Correct! The number was ${secretNumber}`, soundCorrect);
+    }else if(guessesLeft === 0){
+        endGame(`Game Over. The number was ${secretNumber}`, soundWrong);
     }else{
         feedback.textContent = guess < secretNumber ? "Too low! Try again" : "Too high! Try again";
         soundWrong.play();
+        remainingGuesses.textContent = `Guesses remaining: ${guessesLeft}`;
     }
-
 
     userNumber.textContent = `userNumber = ${guess}`;
     randomNumber.textContent = `randomNumber = ${secretNumber}`;
+    guessInput.value = "";
 });
 
 
