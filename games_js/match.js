@@ -35,7 +35,7 @@ function startGame() {
 
     for (let i = 0; i < 16; i++) {
         const imgElement = document.getElementById(`img${i}`);
-        imgElement.src = placeholder; //hide image
+        imgElement.src = imagePairs[i]; //show original img
         imgElement.onclick = () => handleClick(i); //img click  handler
 
         //metadata image
@@ -45,6 +45,19 @@ function startGame() {
             revealed: false
         };
     }
+
+    //lock input
+    locked = true;
+
+    //after 3 second, hide all images with placeholder
+    setTimeout(() => {
+        for (let i = 0; i < 16; i++) {
+            if (!board[i].revealed) {
+                board[i].imgElement.src = placeholder;
+          }
+        }
+        locked = false;
+    }, 3000);
 }
 
 function handleClick(index) {
