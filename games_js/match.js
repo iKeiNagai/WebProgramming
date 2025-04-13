@@ -15,6 +15,11 @@ let board = [];
 let firstPick = null;
 let secondPick = null;
 let locked = false;
+let timeLeft = 120;
+let timerInterval = null;
+
+const msg = document.getElementById('msg');
+const timer = document.getElementById('timer');
 
 //fisher-yates shuffle to randomize order
 function shuffle(array) {
@@ -32,6 +37,13 @@ function startGame() {
     shuffle(imagePairs);
     board = [];
 
+    //reset timer and msg on startup
+    msg.textContent = '';
+    timeLeft = 120;
+    timer.textContent = `Time: ${timeLeft}`; 
+
+    //clear existing
+    if (timerInterval) clearInterval(timerInterval);
 
     for (let i = 0; i < 16; i++) {
         const imgElement = document.getElementById(`img${i}`);
@@ -58,6 +70,18 @@ function startGame() {
         }
         locked = false;
     }, 3000);
+
+    //starts countdown
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timer.textContent = `Time: ${timeLeft}`;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            locked = true;
+            msg.style.color = "#ff6666" //light red
+            msg.textContent = 'Time is up!';
+        }
+    }, 1000);
 }
 
 function handleClick(index) {
@@ -83,6 +107,7 @@ function handleClick(index) {
         board[firstPick].revealed = true;
         board[secondPick].revealed = true;
         resetPicks();
+        checkWin();
     } else {
         //hide card again after 1 second if no match
         setTimeout(() => {
@@ -98,4 +123,14 @@ function resetPicks() {
     firstPick = null;
     secondPick = null;
     locked = false;
+}
+
+//checks if all cards are revealed
+function checkWin() {
+    if (board.every(card => card.revealed)) {
+        clearInterval(timerInterval);
+        msg.style.color = "#90EE90" //light green
+        msg.textContent = 'You Win!';
+        locked = true;
+    }
 }
