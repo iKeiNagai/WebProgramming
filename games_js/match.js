@@ -134,3 +134,14 @@ function checkWin() {
         locked = true;
     }
 }
+
+function showRules(){
+    alert(`Match Game rules:
+        - You have 120 second to find all matches
+        - At the beginning, all cards are shown for 3 seconds
+        - Click two cards to reveal them
+        - If they match, they stay revealed
+        - if they dont, they flip back after a second
+        - Match all 8 pairs before time runs out
+        - GOODLUCK!!!!`)
+}
