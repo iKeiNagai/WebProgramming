@@ -5,7 +5,10 @@ import HelloWorld from './components/hello_world';
 
 function App() {
   return (
+    <>
       <HelloWorld name={'THOMAS'}/>
+      <Counter/>
+    </>
   );
 }
 
